@@ -1,1 +1,3 @@
 /var/log
+/elasticsearch-*.tar.gz
+/elasticsearch-*/plugins
