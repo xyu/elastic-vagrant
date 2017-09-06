@@ -1,3 +1,4 @@
-/var/log
+/var/log/
 /elasticsearch-*.tar.gz
-/elasticsearch-*/plugins
+/elasticsearch-*/plugins/
+/.vagrant/
