@@ -14,16 +14,6 @@ Vagrant.configure("2") do |config|
   config.ssh.username = "vagrant"
   config.ssh.password = "vagrant"
 
-  # Manage our hostfile for us
-  if Vagrant.has_plugin?("vagrant-hostmanager")
-    config.hostmanager.enabled = true
-    config.hostmanager.manage_host = true
-    config.hostmanager.manage_guest = true
-  else
-    config.vm.post_up_message = "Vagrant-hostmanager is not installed. Manual update of your hostfile is required."
-    # Or install this plugin with `vagrant plugin install vagrant-hostmanager`
-  end
-
   # 4GB memory and 50% of host CPU max
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
@@ -39,6 +29,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "es" do |es|
     es.vm.hostname = "es.local"
     es.vm.network "forwarded_port", guest: 9201, host: 9200
+    es.vm.network "forwarded_port", guest: 5601, host: 5600
     es.vm.provision :shell, :path => "install.sh"
   end
 

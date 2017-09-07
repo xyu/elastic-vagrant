@@ -1,4 +1,6 @@
-/var/log/
-/elasticsearch-*.tar.gz
-/elasticsearch-*/plugins/
 /.vagrant/
+/var/log/
+/cache/
+/elasticsearch-*/plugins/
+/kibana-*/installedPlugins/
+/kibana-*/optimize/

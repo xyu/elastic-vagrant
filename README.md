@@ -31,5 +31,5 @@ $ curl 127.0.0.1:9200
 Reprovision on config changes:
 
 ```
-$ vagrant provision es
+$ vagrant provision
 ```
