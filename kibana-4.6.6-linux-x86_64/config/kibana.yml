@@ -84,3 +84,9 @@ logging.dest: /var/log/elastic/kibana/kibana.log
 
 # Set this to true to log all events, including system usage information and all requests.
 # logging.verbose: false
+
+sense.defaultServerUrl: "localhost:9201"
+sense.proxyConfig:
+  - match:
+      host: "localhost"
+      port: "{9201..9203}"
