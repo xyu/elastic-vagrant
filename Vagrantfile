@@ -26,11 +26,11 @@ Vagrant.configure("2") do |config|
     :mount_options => ['dmode=777', 'fmode=777']
 
   # Keep it simple; just 1 VM to reduce memory use
-  config.vm.define "es" do |es|
-    es.vm.hostname = "es.local"
-    es.vm.network "forwarded_port", guest: 9201, host: 9200
-    es.vm.network "forwarded_port", guest: 5601, host: 5600
-    es.vm.provision :shell, :path => "install.sh"
+  config.vm.define "elastic" do |elastic|
+    elastic.vm.hostname = "elastic.local"
+    elastic.vm.network "forwarded_port", guest: 9201, host: 9200
+    elastic.vm.network "forwarded_port", guest: 5601, host: 5600
+    elastic.vm.provision :shell, :path => "install.sh"
   end
 
 end
