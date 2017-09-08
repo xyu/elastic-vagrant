@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
     # Provision VM
     elastic.vm.provision :shell, :path => "provision/srv-stop.sh",
       env: provision_env, run: "always"
-    elastic.vm.provision :shell, :path => "install.sh",
+    elastic.vm.provision :shell, :path => "provision/install.sh",
       env: provision_env
     elastic.vm.provision :shell, :path => "provision/srv-start.sh",
       env: provision_env, run: "always"
