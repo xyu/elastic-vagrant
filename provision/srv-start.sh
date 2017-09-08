@@ -1,8 +1,5 @@
 #!/bin/bash
 
-NUM_NODES=3
-ES_HEAP_SIZE=1G
-
 # Make runtime and data dirs
 mkdir -p /var/run/elastic
 mkdir -p /var/log/elastic

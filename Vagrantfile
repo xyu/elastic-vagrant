@@ -1,6 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+provision_env = {
+  :ES_VER       => "2.4.4",
+  :KB_VER       => "4.6.6",
+  :NUM_NODES    => "3",
+  :ES_HEAP_SIZE => "1G",
+}
+
 Vagrant.configure("2") do |config|
 
   # Lock to current version of box to avoid updates
@@ -32,9 +39,12 @@ Vagrant.configure("2") do |config|
     elastic.vm.network "forwarded_port", guest: 5601, host: 5600
 
     # Provision VM
-    elastic.vm.provision :shell, :path => "provision/srv-stop.sh", run: "always"
-    elastic.vm.provision :shell, :path => "install.sh"
-    elastic.vm.provision :shell, :path => "provision/srv-start.sh", run: "always"
+    elastic.vm.provision :shell, :path => "provision/srv-stop.sh",
+      env: provision_env, run: "always",
+    elastic.vm.provision :shell, :path => "install.sh",
+      env: provision_env
+    elastic.vm.provision :shell, :path => "provision/srv-start.sh",
+      env: provision_env, run: "always"
   end
 
 end

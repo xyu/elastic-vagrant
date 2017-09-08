@@ -1,8 +1,5 @@
 #!/bin/bash
 
-ES_VER="2.4.4"
-KB_VER="4.6.6"
-
 # Upgrade Packages
 apt-get --yes update
 apt-get --yes upgrade
