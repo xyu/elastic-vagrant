@@ -11,6 +11,7 @@ rm -rf /var/log/elastic/*
 # Symlink logs dir for Kibana
 mkdir -p "/vagrant/var/log/elastic/kibana"
 ln -s "/vagrant/var/log/elastic/kibana" "/var/log/elastic/kibana"
+touch "/var/log/elastic/kibana/kibana.log"
 
 # Symlink logs dir for ES
 for i in $(eval echo "{1..$NUM_NODES}"); do
