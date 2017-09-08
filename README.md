@@ -14,7 +14,7 @@ Check that the cluster is up:
 ```
 $ curl 127.0.0.1:9200
 {
-  "name" : "node-1",
+  "name" : "es-node-1",
   "cluster_name" : "2017-gm",
   "cluster_uuid" : "ozO9_svsRZuhzF_YqTcr5A",
   "version" : {
