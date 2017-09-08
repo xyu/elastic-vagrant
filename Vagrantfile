@@ -6,9 +6,9 @@ Vagrant.configure("2") do |config|
   # Lock to current version of box to avoid updates
   config.vm.box = "bento/ubuntu-16.04"
   config.vm.box_version = "201708.22.0"
-  # Box also provided in the INSTALL dir if needed:
-  # config.vm.box_check_update = false
-  # config.vm.box_url = "file:///.../INSTALL/boxes/virtualbox.box"
+  # OR Use 2017 GM version with data preloaded
+  #config.vm.box = "2017gm"
+  #config.vm.box_url = "file://../2017gm.box"
 
   # Use password auth
   config.ssh.username = "vagrant"
