@@ -68,6 +68,12 @@ while true; do
   sleep 2
 done
 
+# Maybe cache optimized build artifacts
+if [ ! -d "/vagrant/kibana-$KB_VER-linux-x86_64/optimize" ]; then
+  echo "Cacheing optimized Kibana build dir in shared folder"
+  cp -a "/app/kibana/optimize" "/vagrant/kibana-$KB_VER-linux-x86_64/."
+fi
+
 echo "==========================================================="
 echo "Elastic Cluster Started!"
 echo "  ES is up at     : http://127.0.0.1:9200/_plugin/whatson"
