@@ -30,7 +30,11 @@ Vagrant.configure("2") do |config|
     elastic.vm.hostname = "elastic.local"
     elastic.vm.network "forwarded_port", guest: 9201, host: 9200
     elastic.vm.network "forwarded_port", guest: 5601, host: 5600
+
+    # Provision VM
+    elastic.vm.provision :shell, :path => "provision/srv-stop.sh", run: "always"
     elastic.vm.provision :shell, :path => "install.sh"
+    elastic.vm.provision :shell, :path => "provision/srv-start.sh", run: "always"
   end
 
 end
