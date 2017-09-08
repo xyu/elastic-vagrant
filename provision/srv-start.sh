@@ -56,6 +56,7 @@ disown
 #
 while true; do
   if ( curl -s -I -XHEAD http://127.0.0.1:9201/ > /dev/null ); then
+    echo "Elasticsearch started"
     break
   fi
   sleep 2
@@ -63,6 +64,7 @@ done
 
 while true; do
   if ( curl -s -I -XHEAD http://127.0.0.1:5601/ > /dev/null ); then
+    echo "Kibana started"
     break
   fi
   sleep 2

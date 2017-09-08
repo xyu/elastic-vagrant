@@ -7,6 +7,7 @@ mkdir -p /var/run/elastic
 PIDS=()
 PIDS+=$( find /var/run/elastic -name *.pid )
 for PID in $PIDS; do
+  echo "Stopping '$PID'..."
   if [ -f $PID ]; then
     pkill -e --pidfile $PID
   fi
